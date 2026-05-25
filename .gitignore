@@ -1,0 +1,10 @@
+# Ignorar archivos temporales y de entorno local
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+
+# Ignorar datos grandes y resultados generados
+punto2-tweets/data/
+punto2-tweets/resultados/
+*.csv

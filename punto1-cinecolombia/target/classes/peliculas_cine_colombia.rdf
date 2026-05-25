@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    ============================================================
+    BASE DE DATOS RDF/XML — CARTELERA CINE COLOMBIA
+    Fecha de cartelera : 14 de mayo de 2026
+    Ontología propia   : http://cinecolombia.com/ontologia#
+    ============================================================
+-->
+<rdf:RDF
+    xmlns:rdf    = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs   = "http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd    = "http://www.w3.org/2001/XMLSchema#"
+    xmlns:dc     = "http://purl.org/dc/elements/1.1/"
+    xmlns:schema = "https://schema.org/"
+    xmlns:cine   = "http://cinecolombia.com/ontologia#">
+
+    <!-- ══════════════════════════════════════════════════════
+         SECCIÓN 1 — DEFINICIÓN DE CLASES
+         ══════════════════════════════════════════════════════ -->
+
+    <rdfs:Class rdf:about="http://cinecolombia.com/ontologia#Pelicula">
+        <rdfs:label xml:lang="es">Película</rdfs:label>
+        <rdfs:comment xml:lang="es">Película en cartelera en Cine Colombia.</rdfs:comment>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://cinecolombia.com/ontologia#Director">
+        <rdfs:label xml:lang="es">Director</rdfs:label>
+        <rdfs:comment xml:lang="es">Director o directora de una película.</rdfs:comment>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://cinecolombia.com/ontologia#Genero">
+        <rdfs:label xml:lang="es">Género cinematográfico</rdfs:label>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://cinecolombia.com/ontologia#Clasificacion">
+        <rdfs:label xml:lang="es">Clasificación de edad</rdfs:label>
+    </rdfs:Class>
+
+    <!-- ══════════════════════════════════════════════════════
+         SECCIÓN 2 — GÉNEROS CINEMATOGRÁFICOS
+         ══════════════════════════════════════════════════════ -->
+
+    <cine:Genero rdf:about="http://cinecolombia.com/genero/Accion">
+        <rdfs:label xml:lang="es">Acción</rdfs:label>
+    </cine:Genero>
+
+    <cine:Genero rdf:about="http://cinecolombia.com/genero/Thriller">
+        <rdfs:label xml:lang="es">Thriller</rdfs:label>
+    </cine:Genero>
+
+    <cine:Genero rdf:about="http://cinecolombia.com/genero/Biopic">
+        <rdfs:label xml:lang="es">Biográfica (Biopic)</rdfs:label>
+    </cine:Genero>
+
+    <cine:Genero rdf:about="http://cinecolombia.com/genero/Comedia">
+        <rdfs:label xml:lang="es">Comedia</rdfs:label>
+    </cine:Genero>
+
+    <cine:Genero rdf:about="http://cinecolombia.com/genero/Animacion">
+        <rdfs:label xml:lang="es">Animación</rdfs:label>
+    </cine:Genero>
+
+    <!-- ══════════════════════════════════════════════════════
+         SECCIÓN 3 — CLASIFICACIONES DE EDAD
+         ══════════════════════════════════════════════════════ -->
+
+    <cine:Clasificacion rdf:about="http://cinecolombia.com/clasificacion/Mayores7">
+        <rdfs:label xml:lang="es">Para mayores de 7 años</rdfs:label>
+        <cine:edadMinima rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</cine:edadMinima>
+    </cine:Clasificacion>
+
+    <cine:Clasificacion rdf:about="http://cinecolombia.com/clasificacion/Mayores12">
+        <rdfs:label xml:lang="es">Para mayores de 12 años</rdfs:label>
+        <cine:edadMinima rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</cine:edadMinima>
+    </cine:Clasificacion>
+
+    <cine:Clasificacion rdf:about="http://cinecolombia.com/clasificacion/Mayores15">
+        <rdfs:label xml:lang="es">Para mayores de 15 años</rdfs:label>
+        <cine:edadMinima rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</cine:edadMinima>
+    </cine:Clasificacion>
+
+    <!-- ══════════════════════════════════════════════════════
+         SECCIÓN 4 — DIRECTORES
+         ══════════════════════════════════════════════════════ -->
+
+    <cine:Director rdf:about="http://cinecolombia.com/director/JakeSchreier">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <rdfs:label>Jake Schreier</rdfs:label>
+        <schema:name>Jake Schreier</schema:name>
+        <schema:nationality>estadounidense</schema:nationality>
+    </cine:Director>
+
+    <cine:Director rdf:about="http://cinecolombia.com/director/SimonMcQuoid">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <rdfs:label>Simon McQuoid</rdfs:label>
+        <schema:name>Simon McQuoid</schema:name>
+        <schema:nationality>australiano</schema:nationality>
+    </cine:Director>
+
+    <cine:Director rdf:about="http://cinecolombia.com/director/AntoineFuqua">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <rdfs:label>Antoine Fuqua</rdfs:label>
+        <schema:name>Antoine Fuqua</schema:name>
+        <schema:nationality>estadounidense</schema:nationality>
+    </cine:Director>
+
+    <cine:Director rdf:about="http://cinecolombia.com/director/DavidFrankel">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <rdfs:label>David Frankel</rdfs:label>
+        <schema:name>David Frankel</schema:name>
+        <schema:nationality>estadounidense</schema:nationality>
+    </cine:Director>
+
+    <cine:Director rdf:about="http://cinecolombia.com/director/AaronHorvath">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <rdfs:label>Aaron Horvath</rdfs:label>
+        <schema:name>Aaron Horvath</schema:name>
+        <schema:nationality>estadounidense</schema:nationality>
+    </cine:Director>
+
+    <!-- ══════════════════════════════════════════════════════
+         SECCIÓN 5 — PELÍCULAS EN CARTELERA (14 may 2026)
+         Fuente: Colombia.com / Cine Colombia
+         ══════════════════════════════════════════════════════ -->
+
+    <!-- ─── PELÍCULA 1: En La Zona Gris ─────────────────── -->
+    <cine:Pelicula rdf:about="http://cinecolombia.com/pelicula/EnLaZonaGris2026">
+        <rdf:type rdf:resource="https://schema.org/Movie"/>
+        <dc:title>En La Zona Gris</dc:title>
+        <dc:description xml:lang="es">
+            Dos especialistas en extracción deben designar una ruta de escape
+            para una negociadora de alto rango en medio de una misión peligrosa.
+        </dc:description>
+        <cine:duracionMinutos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98</cine:duracionMinutos>
+        <cine:fechaEstreno rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-14</cine:fechaEstreno>
+        <cine:genero rdf:resource="http://cinecolombia.com/genero/Thriller"/>
+        <cine:clasificacion rdf:resource="http://cinecolombia.com/clasificacion/Mayores12"/>
+        <cine:disponible3D rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</cine:disponible3D>
+        <cine:distribuidora>Diamond Films</cine:distribuidora>
+        <cine:enCartelera rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</cine:enCartelera>
+        <rdfs:seeAlso rdf:resource="https://www.colombia.com/cine/en-la-zona-gris-12088"/>
+    </cine:Pelicula>
+
+    <!-- ─── PELÍCULA 2: Mortal Kombat II ─────────────────── -->
+    <cine:Pelicula rdf:about="http://cinecolombia.com/pelicula/MortalKombatII2026">
+        <rdf:type rdf:resource="https://schema.org/Movie"/>
+        <dc:title>Mortal Kombat II</dc:title>
+        <dc:description xml:lang="es">
+            Los campeones favoritos de los fans, acompañados por Johnny Cage,
+            se enfrentan en la batalla definitiva contra el oscuro régimen de
+            Shao Kahn, que amenaza la existencia del Reino de la Tierra.
+        </dc:description>
+        <cine:duracionMinutos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">116</cine:duracionMinutos>
+        <cine:fechaEstreno rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-07</cine:fechaEstreno>
+        <cine:genero rdf:resource="http://cinecolombia.com/genero/Accion"/>
+        <cine:clasificacion rdf:resource="http://cinecolombia.com/clasificacion/Mayores15"/>
+        <cine:director rdf:resource="http://cinecolombia.com/director/SimonMcQuoid"/>
+        <cine:disponible3D rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</cine:disponible3D>
+        <cine:distribuidora>Warner Bros.</cine:distribuidora>
+        <cine:enCartelera rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</cine:enCartelera>
+        <schema:actor>Lewis Tan</schema:actor>
+        <schema:actor>Jessica McNamee</schema:actor>
+        <schema:actor>Josh Lawson</schema:actor>
+        <rdfs:seeAlso rdf:resource="https://www.colombia.com/cine/mortal-kombat-ii-12068"/>
+    </cine:Pelicula>
+
+    <!-- ─── PELÍCULA 3: Michael ───────────────────────────── -->
+    <cine:Pelicula rdf:about="http://cinecolombia.com/pelicula/Michael2026">
+        <rdf:type rdf:resource="https://schema.org/Movie"/>
+        <dc:title>Michael</dc:title>
+        <dc:description xml:lang="es">
+            Retrato íntimo de la vida y el legado de Michael Jackson, protagonizado
+            por Jaafar Jackson en su debut cinematográfico, desde sus inicios con
+            los Jackson Five hasta convertirse en el artista más grande del mundo.
+        </dc:description>
+        <cine:duracionMinutos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">127</cine:duracionMinutos>
+        <cine:fechaEstreno rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-09</cine:fechaEstreno>
+        <cine:genero rdf:resource="http://cinecolombia.com/genero/Biopic"/>
+        <cine:clasificacion rdf:resource="http://cinecolombia.com/clasificacion/Mayores12"/>
+        <cine:director rdf:resource="http://cinecolombia.com/director/AntoineFuqua"/>
+        <cine:disponible3D rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</cine:disponible3D>
+        <cine:distribuidora>Universal Pictures</cine:distribuidora>
+        <cine:enCartelera rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</cine:enCartelera>
+        <schema:actor>Jaafar Jackson</schema:actor>
+        <rdfs:seeAlso rdf:resource="https://www.colombia.com/cine/michael-12048"/>
+    </cine:Pelicula>
+
+    <!-- ─── PELÍCULA 4: El Diablo Viste a la Moda 2 ─────── -->
+    <cine:Pelicula rdf:about="http://cinecolombia.com/pelicula/ElDiabloVisteALaModa2">
+        <rdf:type rdf:resource="https://schema.org/Movie"/>
+        <dc:title>El Diablo Viste a la Moda 2</dc:title>
+        <dc:description xml:lang="es">
+            Casi veinte años después, Meryl Streep, Anne Hathaway, Emily Blunt y
+            Stanley Tucci regresan a las elegantes calles de Nueva York y a las
+            sofisticadas oficinas de la revista Runway en la esperada secuela.
+        </dc:description>
+        <cine:duracionMinutos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</cine:duracionMinutos>
+        <cine:fechaEstreno rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-07</cine:fechaEstreno>
+        <cine:genero rdf:resource="http://cinecolombia.com/genero/Comedia"/>
+        <cine:clasificacion rdf:resource="http://cinecolombia.com/clasificacion/Mayores7"/>
+        <cine:director rdf:resource="http://cinecolombia.com/director/DavidFrankel"/>
+        <cine:disponible3D rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</cine:disponible3D>
+        <cine:distribuidora>20th Century Studios</cine:distribuidora>
+        <cine:enCartelera rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</cine:enCartelera>
+        <schema:actor>Meryl Streep</schema:actor>
+        <schema:actor>Anne Hathaway</schema:actor>
+        <schema:actor>Emily Blunt</schema:actor>
+        <schema:actor>Stanley Tucci</schema:actor>
+        <rdfs:seeAlso rdf:resource="https://www.colombia.com/cine/el-diablo-viste-a-la-moda-2-12054"/>
+    </cine:Pelicula>
+
+    <!-- ─── PELÍCULA 5: Super Mario Galaxy: La Película ──── -->
+    <cine:Pelicula rdf:about="http://cinecolombia.com/pelicula/SuperMarioGalaxy2026">
+        <rdf:type rdf:resource="https://schema.org/Movie"/>
+        <dc:title>Super Mario Galaxy: La Película</dc:title>
+        <dc:description xml:lang="es">
+            Mario y Luigi salen del Reino Champiñón para una aventura intergaláctica.
+            La batalla se traslada al espacio y Bowser Jr. se les cruza en el camino.
+            Con aliados inesperados, el destino del universo queda en juego.
+        </dc:description>
+        <cine:duracionMinutos rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">115</cine:duracionMinutos>
+        <cine:fechaEstreno rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-07</cine:fechaEstreno>
+        <cine:genero rdf:resource="http://cinecolombia.com/genero/Animacion"/>
+        <cine:clasificacion rdf:resource="http://cinecolombia.com/clasificacion/Mayores12"/>
+        <cine:director rdf:resource="http://cinecolombia.com/director/AaronHorvath"/>
+        <cine:disponible3D rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</cine:disponible3D>
+        <cine:distribuidora>Universal Pictures / Illumination</cine:distribuidora>
+        <cine:enCartelera rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</cine:enCartelera>
+        <rdfs:seeAlso rdf:resource="https://www.colombia.com/cine/super-mario-galaxy-la-pelicula-11013"/>
+    </cine:Pelicula>
+
+</rdf:RDF>
